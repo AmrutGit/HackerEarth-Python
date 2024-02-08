@@ -1,0 +1,25 @@
+def calc_min(a, b, num):
+    lis = []
+    x = 0
+    y = 0
+    for i in range(num):           #take list as input in list 
+        lis.append(input().split()) 
+
+    for j in range(num):           #checking combinations which gives min cost
+        x = x + (int(lis[j][0])*a) + (int(lis[j][1])*b)   #sum 1
+        y = y + (int(lis[j][0])*b) + (int(lis[j][1])*a)   #sum 2
+
+    if x>y:     #check for min
+        print(y)
+    else:
+        print(x)
+
+# ----------------- main code -------------------
+n_cases = int(input())                   # no of test cases
+
+for o in range(n_cases):
+    bl_price = input().split()           # input of baloon price
+    a = int(bl_price[0])                # splitting into single baloon price
+    b = int(bl_price[1])
+    num = int(input())                  # no of participants
+    calc_min(a, b, num)   
