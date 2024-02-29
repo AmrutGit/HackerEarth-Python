@@ -1,0 +1,12 @@
+lower = [chr(i) for i in range(97, 123)]
+upper = [chr(i) for i in range(65, 91)]
+s = ''
+name = input()                  # Reading input from STDIN
+for i in name:
+    if i in lower:
+        s+=i.upper()
+    elif i in upper:
+        s+=i.lower()
+    else:
+        s+=i
+print(s)
